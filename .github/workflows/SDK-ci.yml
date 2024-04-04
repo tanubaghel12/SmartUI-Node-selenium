@@ -1,0 +1,36 @@
+name: NodeJS SDK Wrapper CI
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  LT_USERNAME: ${{ secrets.LT_USERNAME }}
+  LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+  PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+  LT_SDK_DEBUG: true
+  SMARTUI_DEBUG: true
+
+jobs:
+  smartui-nodejs-sdk:
+    name: Execute NodeJS sdk build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Install Dependencies
+        run: |
+          npm i @lambdatest/smartui-cli
+
+      - name: Execute NodeJS Wrapper
+        run: |
+          cd sdk
+          npm i
+          npx smartui --version
+          npx smartui config:create smartui-web.json
+          npx smartui --config smartui-web.json exec -- npm run smartui-cloud

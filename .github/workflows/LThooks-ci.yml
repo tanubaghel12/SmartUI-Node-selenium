@@ -1,0 +1,39 @@
+name: NodeJS Selenium Web Autoamtion Hooks CI
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  LT_USERNAME: ${{ secrets.LT_USERNAME }}
+  LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+  GRID_HOST: ${{ secrets.GRID_HOST }}
+
+jobs:
+  SmartUI-Gihub-Action:
+    name: Execute SmartUI Test with Github App Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Create commit status
+        run: |
+          API_HOST=https://api.github.com
+          # Check out the PR branch
+          git checkout $GITHUB_HEAD_REF
+          # Get the commit ID of the last commit
+          COMMIT_ID=$(git rev-parse HEAD)
+          echo "Commit ID of PR: $COMMIT_ID"
+          GITHUB_URL=$API_HOST/repos/$GITHUB_REPOSITORY/statuses/$COMMIT_ID
+          echo "GITHUB_URL: $GITHUB_URL"
+          echo "GITHUB_URL=$GITHUB_URL" >> $GITHUB_ENV
+
+      - name: Install Dependencies & Execute tests
+        run: |
+          cd hooks
+          npm install
+          npm test

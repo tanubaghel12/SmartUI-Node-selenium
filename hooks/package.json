@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "minimatch": "^3.0.5",
+    "moment": "^2.29.4",
+    "scroll-to-bottomjs": "^1.1.0",
+    "selenium-webdriver": "^3.6.0"
+  },
+  "name": "nodejs-selenium-sample",
+  "description": "![LambdaTest Logo](https://www.lambdatest.com/images/logo.svg)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./examples/index.js",
+    "test": "node ./examples/test.js",
+    "multiple": "node ./examples/multiple-urls/multiple-url-tests-sample.js",
+    "multiple-config": "node ./examples/multiple-urls/parallel-config-sample.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LambdaTest/nodejs-selenium-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LambdaTest/nodejs-selenium-sample/issues"
+  },
+  "homepage": "https://github.com/LambdaTest/nodejs-selenium-sample#readme"
+}

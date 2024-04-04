@@ -1,0 +1,42 @@
+[
+    {
+        "platform": "Windows 10",
+        "browserName": "chrome",
+        "version": "latest",
+        "visual": "true",
+        "name": "SmartUi Transparency Test",
+        "build": "Smart Ui Transparency Build",
+        "smartUI.project": "SmartUI Nodejs Sample Project",
+        "selenium_version": "4.0.0"
+    },
+    {
+        "platform": "Windows 10",
+        "browserName": "firefox",
+        "version": "latest",
+        "visual": "true",
+        "name": "SmartUi Transparency Test",
+        "build": "Smart Ui Transparency Build",
+        "smartUI.project": "SmartUI Nodejs Sample Project",
+        "selenium_version": "4.0.0"
+    },
+    {
+        "platform": "ventura",
+        "browserName": "safari",
+        "version": "latest",
+        "visual": "true",
+        "name": "SmartUi Transparency Test",
+        "build": "Smart Ui Transparency Build",
+        "smartUI.project": "SmartUI Nodejs Sample Project",
+        "selenium_version": "4.0.0"
+    },
+    {
+        "platform": "ventura",
+        "browserName": "edge",
+        "version": "latest",
+        "visual": "true",
+        "name": "SmartUi Transparency Test",
+        "build": "Smart Ui Transparency Build",
+        "smartUI.project": "SmartUI Nodejs Sample Project",
+        "selenium_version": "4.0.0"
+    } 
+]

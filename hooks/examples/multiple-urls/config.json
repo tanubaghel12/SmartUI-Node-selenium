@@ -1,0 +1,22 @@
+[
+    {
+        "platform": "Windows 10",
+        "browserName": "chrome",
+        "version": "latest",
+        "visual": "true",
+        "name": "SmartUi Transparency Test",
+        "build": "Smart Ui Transparency Build",
+        "smartUI.project": "Smart UI sample test #1100",
+        "selenium_version": "4.0.0"
+    },
+    {
+        "platform": "Windows 11",
+        "browserName": "chrome",
+        "version": "latest",
+        "visual": "true",
+        "name": "SmartUi Transparency Test",
+        "build": "Smart Ui Transparency Build",
+        "smartUI.project": "Smart UI sample test #1110",
+        "selenium_version": "4.0.0"
+    }
+]
